@@ -10,52 +10,37 @@ var spyfallGameApi = {
                 dateStarted: new Date(2015, 4, 20, 0, 0, 0, 0),
                 numberOfPlayers: 5,
                 numberOfVotes: 0,
-                round: 0,
-                playersNeededForMission: 2,
-                missionOutcomes: [
-                    1, 2, 2, 1, 0
-                ],
                 status: 'MissionNominatingState',
-                leader: {
-                    userName: 'leader',
-                    playerRole: 'spy',
-                    gameId: 'abcd1234',
-                    cardUrl: '/Assets/ally2.jpg'
-                },
-                points: {
-                    spies: 0,
-                    resistance: 0
-                },
                 listOfPlayers: [
                     {
                         userName: "leader",
-                        playerRole: "spy",
+                        playerRole: "Spy",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/spy1.jpg'
+                        cardUrl: '/Graphics/spy.jpg'
                     },
                     {
                         userName: "justin",
-                        playerRole: "spy",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/spy2.jpg'
+                        cardUrl: '/Graphics/red.jpg'
                     },
                     {
                         userName: "ben",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally3.jpg'
+                        cardUrl: '/Graphics/red.jpg'
                     },
                     {
                         userName: "felix",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally4.jpg'
+                        cardUrl: '/Graphics/red.jpg'
                     },
                     {
                         userName: "penny",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally5.jpg'
+                        cardUrl: '/Graphics/red.jpg'
                     }
                 ],
 
@@ -68,69 +53,55 @@ var spyfallGameApi = {
                 dateStarted: new Date(2015, 4, 20, 0, 0, 0, 0),
                 numberOfPlayers: 8,
                 numberOfVotes: 0,
-                round: 0,
-
-                missionOutcomes: [
-                0, 0, 0, 0, 0
-                ],
                 status: 'SetupState',
-                leader: {
-                    userName: 'leader',
-                    playerRole: 'resistance',
-                    gameId: 'efgh5678',
-                    cardUrl: '/Assets/ally2.jpg'
-                },
-                points: {
-                    spies: 0,
-                    resistance: 0
-                },
                 listOfPlayers: [
                     {
                         userName: "leader",
-                        playerRole: "spy",
+                        playerRole: "Spy",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/spy1.jpg'
+                        cardUrl: '/Graphics/spy.jpg'
                     },
                     {
                         userName: "justin",
-                        playerRole: "spy",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/spy2.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     },
                     {
                         userName: "ben",
-                        playerRole: "spy",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/spy3.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     },
                     {
                         userName: "felix",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally3.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     },
                     {
                         userName: "penny",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally4.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     },
                     {
                         userName: "jake",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally5.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     },
                     {
                         userName: "stephen",
-                        playerRole: "resistance",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally6.jpg'
-                    }, {
-                        userName: "colin",
-                        playerRole: "resistance",
+                        cardUrl: '/Graphics/blue.jpg'
+                    },
+                    {
+                        userName: "jacob",
+                        playerRole: "Citizen",
                         gameId: "abcd1234",
-                        cardUrl: '/Assets/ally1.jpg'
+                        cardUrl: '/Graphics/blue.jpg'
                     }
                 ],
 
@@ -179,9 +150,9 @@ var spyfallGameApi = {
         if (useMockData) {
             return {
                 userName: playerName,
-                playerRole: "spy",
+                playerRole: "Unassigned",
                 gameId: gameId,
-                cardUrl: '/Assets/ally1.jpg'
+                cardUrl: ''
             }
         } else {
             $.ajax({
@@ -236,8 +207,37 @@ var spyfallGameApi = {
 
     },
 
-    createGame: function (playerName) {
+    createGame: function (numberOfPlayers) {
         console.log('create game');
+        if (useMockData) {
+            return {
+                gameId: 'NEWGAME',
+                dateStarted: new Date(2015, 5, 20, 0, 0, 0, 0),
+                numberOfPlayers: numberOfPlayers,
+                numberOfVotes: 0,
+                status: 'SetupState',
+                listOfPlayers: [],
+
+                getVote: function(playerName) {
+                    return null;
+                }
+            };
+        } else {
+            $.ajax({
+                type: "GET",
+                url: "Game/CreateGame.html",
+                data: {
+                    numberOfPlayers: numberOfPlayers
+                },
+                success: function (jsonPlayer) {
+                    console.log(jsonPlayer);
+                }
+            });
+        }
+    },
+
+    addGameToGameList: function(gameToAdd) {
+        
     },
 
     updateGame: function (gameId) {

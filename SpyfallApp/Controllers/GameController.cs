@@ -30,6 +30,13 @@ namespace SpyfallApp.Controllers
             return Json(player, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult CreateGame(string playerName, int numberOfPlayers)
+        {
+            SpyfallGame game = GameRepo.CreateGame(numberOfPlayers);
+            game.Join(playerName);
+            return Json(game, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ViewActiveGames()
         {
             var games = GameRepo.GetActiveGames();

@@ -8,6 +8,7 @@ namespace SpyfallApp.Data.Models.Enum
     public enum Role
     {
         Citizen,
-        Spy
+        Spy,
+        Unassigned
     }
 }

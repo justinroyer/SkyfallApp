@@ -5,7 +5,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url('assets/loading.gif') 50% 50% no-repeat rgb(249,249,249);
+	background: url('Graphics/loading.gif') 50% 50% no-repeat rgb(249,249,249);
 }
 
 .modalWindow {
@@ -40,11 +40,11 @@ body {
 }
 
 #voteYes {
-    background-image: url('assets/button-yes.png');
+    background-image: url('Graphics/button-yes.png');
     background-size: cover;
 }
 
 #voteNo {
-    background-image: url('assets/button-no.png');
+    background-image: url('Graphics/button-no.png');
     background-size: cover;
 }

@@ -191,6 +191,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Graphics\blue.jpg" />
+    <Content Include="Graphics\button-no.png" />
+    <Content Include="Graphics\button-yes.png" />
+    <Content Include="Graphics\green.jpg" />
+    <Content Include="Graphics\loading.gif" />
+    <Content Include="Graphics\orange.jpg" />
+    <Content Include="Graphics\purple.jpg" />
+    <Content Include="Graphics\red.jpg" />
+    <Content Include="Graphics\spy.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

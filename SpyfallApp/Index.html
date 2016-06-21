@@ -19,13 +19,34 @@
                 <h1>Spyfall!!</h1>
                 <div id="game-list">
                     <h2>Pick a Game</h2>
+                    <input type="number" placeholder="#Players" id="numberOfPlayers"/>
                     <ul>
                         <li><input type="radio" name="gamePicked" id="gamePicked" value="newGame" />Create New Game</li>
                     </ul>
                 </div>
-                <input type="text" placeholder="Enter your name..." id="name-input" />
-                <button type="submit" onclick="handleJoinSubmit(event)">Join</button>
+                <input type="text" placeholder="Enter your name..." id="name-input"/>
+                <button type="submit" onclick="handleJoinSubmit(event)">Begin</button>
             </form>
+        </div>
+
+        <!--User Card View-->
+        <button type="button" onclick="" class="btn btn-info btn-lg" data-toggle="modal" data-target="#usercardModal">Show Role Card</button>
+        <div id="usercardModal" class="modalWindow fade" role="dialog">
+            <a data-dismiss="modal" id="card-image"></a>
+        </div>
+
+        <!--List Of Players-->
+        <div id="listOfPlayers">
+            <button onclick="viewPlayers()">View Players</button>
+            <ul id='players-list' style="display: none"></ul>
+        </div>
+
+        <!--Lock Screen-->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lockscreenModal">Lock Screen</button>
+        <div id="lockscreenModal" class="modalWindow fade" role="dialog">
+            <a data-dismiss="modal">
+                <img src="Assets/characterBack.jpg" />
+            </a>
         </div>
     </body>
 </html>

@@ -3,3 +3,4 @@ C:\Projects\SpyfallApp\SpyfallApp.Data\SpyfallApp.Data\bin\SpyfallApp.Data.dll
 C:\Projects\SpyfallApp\SpyfallApp.Data\SpyfallApp.Data\bin\SpyfallApp.Data.pdb
 C:\Projects\SpyfallApp\SpyfallApp.Data\SpyfallApp.Data\obj\Debug\SpyfallApp.Data.dll
 C:\Projects\SpyfallApp\SpyfallApp.Data\SpyfallApp.Data\obj\Debug\SpyfallApp.Data.pdb
+C:\Projects\SpyfallApp\SpyfallApp.Data\SpyfallApp.Data\obj\Debug\SpyfallApp.Data.csprojResolveAssemblyReference.cache

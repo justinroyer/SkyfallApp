@@ -10,7 +10,7 @@ namespace SpyfallApp.Data.Models
     {
         public string Name;
         public Role PlayerRole;
-        public Guid GameID;
+        public Guid GameID { get; set; }
 
         public Player() { }
 
