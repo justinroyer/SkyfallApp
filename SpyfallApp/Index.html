@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="index.js"></script>
+        <script src="SpyfallGameAPI.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+        <title>Spyfall</title>
+    </head>
+    <body>
+        <!--Loader-->
+        <div class="loader"></div>
+
+        <!--Login View-->
+        <div id="player-join">
+            <form>
+                <h1>Spyfall!!</h1>
+                <div id="game-list">
+                    <h2>Pick a Game</h2>
+                    <ul>
+                        <li><input type="radio" name="gamePicked" id="gamePicked" value="newGame" />Create New Game</li>
+                    </ul>
+                </div>
+                <input type="text" placeholder="Enter your name..." id="name-input" />
+                <button type="submit" onclick="handleJoinSubmit(event)">Join</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -35,5 +35,7 @@ namespace SpyfallApp.Controllers
             var games = GameRepo.GetActiveGames();
             return Json(games, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }

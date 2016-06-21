@@ -9,6 +9,7 @@ namespace SpyfallApp.Data.Models
 {
     public class SpyfallGame
     {
+        //Properties
         public Guid GameID { get; set; }
 
         public DateTime DateStarted { get; set; }
@@ -25,6 +26,7 @@ namespace SpyfallApp.Data.Models
             get { return Context.Status; }
         }
 
+        //Constructors
         public SpyfallGame(GameState state)
         {
             Context = new GameContext(state, 5);
